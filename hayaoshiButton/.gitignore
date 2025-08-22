@@ -1,0 +1,42 @@
+@'
+# OS/Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.history/
+
+# Node（使っていれば）
+node_modules/
+npm-debug.log*
+yarn-*.log
+
+# Python（使っていれば）
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+
+# Java（使っていれば）
+*.class
+target/
+build/
+.gradle/
+
+# Arduino / ESP32 / PlatformIO
+.pio/
+.build/
+*.bin
+*.elf
+*.map
+*.hex
+*.eep
+*.o
+*.d
+lib/*.a
+lib/*.o
+# VSCode の PlatformIO 拡張が生成する一時
+.gcc-flags.json
+.clang_complete
+'@ > .gitignore

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}アプリ{% endblock %}</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    .sidebar {
+      width: 80px;
+      background-color: #d3d3d3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+    .sidebar a {
+      margin: 10px 0;
+      display: block;
+      width: 48px;
+      height: 48px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+    }
+    .sidebar a.home { background-image: url('/static/images/home.png'); }
+    .sidebar a.ranking { background-image: url('/static/images/rank.png'); }
+    .sidebar a.answer { background-image: url('/static/images/answer.png'); }
+    .sidebar a.name { background-image: url('/static/images/name.png'); }
+    .sidebar a:hover {
+      filter: brightness(0.8);
+    }
+    .content {
+      flex-grow: 1;
+      padding: 30px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      height: 100vh;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 6px 12px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <a href="{{ url_for('home') }}" class="home" title="ホーム"></a>
+    <a href="{{ url_for('ranking') }}" class="ranking" title="ランキング"></a>
+    <a href="{{ url_for('answer') }}" class="answer" title="回答判定"></a>
+    <a href="{{ url_for('name') }}" class="name" title="名前登録"></a>
+  </nav>
+  <main class="content">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li style="color: red;">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

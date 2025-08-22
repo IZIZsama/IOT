@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NoirStream - ホーム</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #eee;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        a {
+            color: #90caf9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .nav-links {
+            margin-top: 1em;
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>早押し管理画面</h1>
+        <p></p>
+    </header>
+    <main>
+        <div class="nav-links">
+            <a href="{{ url_for('ranking') }}">ランキング</a>
+            <a href="{{ url_for('name') }}">名前登録</a>
+            <a href="{{ url_for('bluetooth') }}">Bluetooth接続</a>
+            <a href="{{ url_for('answer') }}">クイズ解答</a>
+        </div>
+        <section>
+            <h2>概要</h2>
+            <p>概要はここに書く</p>
+        </section>
+    </main>
+</body>
+</html>

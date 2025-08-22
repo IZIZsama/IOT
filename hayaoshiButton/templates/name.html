@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>プレイヤー名登録 - NoirStream</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      padding: 2em;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 0.2em;
+      display: block;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5em;
+      font-size: 1em;
+      border-radius: 4px;
+      border: none;
+      background-color: #2c2c2c;
+      color: #eee;
+    }
+    button {
+      margin-top: 1em;
+      padding: 0.7em;
+      font-size: 1em;
+      background-color: #2196f3;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+  <h1>プレイヤー名登録</h1>
+  <form method="post" action="{{ url_for('name') }}">
+    <div>
+      <label for="name1">プレイヤー1の名前</label>
+      <input type="text" id="name1" name="name1" placeholder="名前を入力してください" />
+    </div>
+    <div>
+      <label for="name2">プレイヤー2の名前</label>
+      <input type="text" id="name2" name="name2" placeholder="名前を入力してください" />
+    </div>
+    <div>
+      <label for="name3">プレイヤー3の名前</label>
+      <input type="text" id="name3" name="name3" placeholder="名前を入力してください" />
+    </div>
+    <div>
+      <label for="name4">プレイヤー4の名前</label>
+      <input type="text" id="name4" name="name4" placeholder="名前を入力してください" />
+    </div>
+    <button type="submit">登録</button>
+  </form>
+</body>
+</html>

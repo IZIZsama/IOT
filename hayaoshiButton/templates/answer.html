@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>回答画面 - NoirStream</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #eee;
+            font-family: Arial, sans-serif;
+            padding: 2em;
+            text-align: center;
+        }
+        header {
+            margin-bottom: 2em;
+        }
+        .message {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+        .responder {
+            font-size: 1.2em;
+            color: #90caf9;
+            margin-bottom: 2em;
+        }
+        a {
+            color: #90caf9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        form {
+            margin-top: 1em;
+        }
+        button {
+            background-color: #2196f3;
+            border: none;
+            padding: 0.7em 1.5em;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin: 0 0.5em;
+        }
+        button:hover {
+            background-color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>回答確認</h1>
+    </header>
+
+    {% if first_responder %}
+        <p class="responder">最初に回答したのは: <strong>{{ first_responder }}</strong> さんです</p>
+    {% endif %}
+
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+
+    <form method="post" action="">
+        <button type="submit" name="result" value="correct">正解</button>
+        <button type="submit" name="result" value="wrong">不正解</button>
+    </form>
+
+    <p><a href="{{ url_for('home') }}">ホームへ戻る</a></p>
+</body>
+</html>

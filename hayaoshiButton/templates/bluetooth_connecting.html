@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bluetooth接続中 - NoirStream</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .message {
+      font-size: 1.5em;
+      margin-bottom: 2em;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 3em;
+      color: #ccc;
+      text-decoration: none;
+      font-size: 1em;
+    }
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">Bluetooth接続が完了しました。</div>
+
+  <a href="{{ url_for('bluetooth') }}" class="back-link">← Bluetooth管理画面に戻る</a>
+</body>
+</html>

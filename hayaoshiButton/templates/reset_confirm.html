@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>データ初期化確認 - NoirStream</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      padding: 2em;
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 1.5em;
+    }
+    form {
+      display: inline-block;
+      margin-top: 2em;
+    }
+    button {
+      padding: 0.7em 2em;
+      font-size: 1em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0 1em;
+      color: white;
+    }
+    button.confirm {
+      background-color: #d32f2f;
+    }
+    button.confirm:hover {
+      background-color: #b71c1c;
+    }
+    button.cancel {
+      background-color: #555;
+    }
+    button.cancel:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>データを初期化しますか？</h1>
+  <p>この操作は取り消せません。よろしいですか？</p>
+
+  <form method="post" action="{{ url_for('reset') }}">
+    <button type="submit" name="confirm" value="yes" class="confirm">はい、初期化する</button>
+    <button type="submit" name="confirm" value="no" class="cancel">キャンセル</button>
+  </form>
+</body>
+</html>

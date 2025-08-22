@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NoirStream - ランキング</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #eee;
+            margin: 0;
+            padding: 1em;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 1em;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        th, td {
+            padding: 0.5em 1em;
+            border-bottom: 1px solid #333;
+            text-align: center;
+        }
+        th {
+            background-color: #222;
+        }
+        .error {
+            color: #ff6f61;
+            font-weight: bold;
+            margin-top: 1em;
+            text-align: center;
+        }
+        a {
+            color: #90caf9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .nav-links {
+            margin-top: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NoirStream ランキング</h1>
+    </header>
+
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">ホーム</a>
+    </div>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>順位</th>
+                <th>名前</th>
+                <th>ポイント</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in ranking %}
+            <tr>
+                <td>{{ player.rank }}</td>
+                <td>{{ player.name }}</td>
+                <td>{{ player.points }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
